@@ -80,7 +80,6 @@ func TestMajoritySCF(t *testing.T) {
 	}
 }
 
-/*
 func TestApprovalSWF(t *testing.T) {
 	prefs := [][]Alternative{
 		{1, 2, 3},
@@ -120,7 +119,6 @@ func TestApprovalSCF(t *testing.T) {
 	}
 }
 
-
 func TestCondorcetWinner(t *testing.T) {
 	prefs1 := [][]Alternative{
 		{1, 2, 3},
@@ -144,4 +142,3 @@ func TestCondorcetWinner(t *testing.T) {
 		t.Errorf("no best alternative for prefs2")
 	}
 }
-*/

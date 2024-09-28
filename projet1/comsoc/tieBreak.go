@@ -40,8 +40,21 @@ func SWFFactory(swf func(p Profile) (Count, error), tb func([]Alternative) (Alte
 			//récupération des meilleurs alternatives
 			bestAlts := maxCount(count)
 
-		}
+			for i := range bestAlts {
+				delete(count, bestAlts[i])
+			}
 
+			for len(bestAlts) > 0 {
+				bestAlt, errTB := tb(bestAlts)
+				if errTB != nil {
+					return nil, errTB
+				}
+				sortedAlts = append(sortedAlts, bestAlt)
+				indice := rank(bestAlt, bestAlts)
+				bestAlts = slices.Delete(bestAlts, indice, indice+1)
+			}
+		}
+		return sortedAlts, nil
 	}
 }
 

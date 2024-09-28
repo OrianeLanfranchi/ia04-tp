@@ -22,7 +22,7 @@ func rank(alt Alternative, prefs []Alternative) int {
 
 // renvoie vrai ssi alt1 est préférée à alt2
 func isPref(alt1, alt2 Alternative, prefs []Alternative) bool {
-	return rank(alt1, prefs) > rank(alt2, prefs)
+	return rank(alt1, prefs) < rank(alt2, prefs)
 }
 
 // renvoie les meilleures alternatives pour un décompte donné
